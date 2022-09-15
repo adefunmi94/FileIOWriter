@@ -1,0 +1,4 @@
+service\WordService.class
+model\Vowel.class
+model\Word.class
+service\WordServicrImpl.class
