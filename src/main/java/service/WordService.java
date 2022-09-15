@@ -13,6 +13,7 @@ public interface WordService {
 
     public void writeOutputIntoFile(String printOut) throws IOException;
 
+    public String outPutFormatter(Map<Integer, List<Word>> groupedWords);
 
 
 }

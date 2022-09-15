@@ -22,22 +22,22 @@ public class FileInputOutputTest {
     @Test
     public void testCases() throws IOException {
 
-        WordServicrImpl wordServicr = new WordServicrImpl();
-        Map<Integer, List<Word>> words = wordServicr.fileProcessing();
+        WordServicrImpl wordService = new WordServicrImpl();
+        Map<Integer, List<Word>> words = wordService.fileProcessing();
 
        Assertions.assertThat(words).isNotNull();
 
 
-        System.out.println("Test Index =="+Utility.getGroupAverage(words.get(5)));
+        System.out.println("Test Index =="+ words);
         Assertions.assertThat(Utility.getGroupAverage(words.get(6))).isEqualTo(2.5);
-
-        String fileOutput = wordServicr.outPutFormatter(words);
+//
+        String fileOutput = wordService.outPutFormatter(words);
         System.out.println(fileOutput);
 
 
        Assertions.assertThat(fileOutput).isNotNull();
 
-       wordServicr.writeOutputIntoFile(fileOutput);
+       wordService.writeOutputIntoFile(fileOutput);
 
     }
 

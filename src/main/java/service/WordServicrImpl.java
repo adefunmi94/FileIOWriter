@@ -40,6 +40,20 @@ public class WordServicrImpl implements WordService{
 
     }
 
+    @Override
+    public String outPutFormatter(Map<Integer, List<Word>> groupedWords) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("OUTPUT");
+        stringBuilder.append("\n");
+        for (Map.Entry<Integer,List<Word>> entry: groupedWords.entrySet() ) {
+//            System.out.println(formatResponse(entry));
+
+            stringBuilder.append(formatResponse(entry));
+
+        }
+        return stringBuilder.toString();
+    }
+
     private static Map<Integer, List<Word>> groupWords(List<Word> words){
         Map<Integer,List<Word>> wordGroup = new HashMap<>();
         for (Word word: words ) {
@@ -71,17 +85,6 @@ public class WordServicrImpl implements WordService{
         return "{"+printVowel + "}";
     }
 
-     public String outPutFormatter(Map<Integer, List<Word>> groupedWords){
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("OUTPUT");
-        stringBuilder.append("\n");
-        for (Map.Entry<Integer,List<Word>> entry: groupedWords.entrySet() ) {
-//            System.out.println(formatResponse(entry));
 
-            stringBuilder.append(formatResponse(entry));
-
-        }
-      return stringBuilder.toString();
-    }
 
 }
